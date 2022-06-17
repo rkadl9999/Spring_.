@@ -10,7 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequiredArgsConstructor
 public class BoardController {
-    @PostMapping
+    private final boardService boardService;
+    @PostMapping("/posting")
     public Boolean create(@RequestBody BoardDto boardDto){
         boardService.createBoard(boardDto);
         return true;

@@ -10,6 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 @RequiredArgsConstructor
 public class boardService {
+    private final BoardRepository BoardRepository;
     @Transactional
     public void createBoard(BoardDto boardDto){
         Board board = boardDto.toEntity();
